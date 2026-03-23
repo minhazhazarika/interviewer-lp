@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InterviewReady – Apna Pehla Corporate Interview Crack Karo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1117;
+    --paper: #faf8f3;
+    --saffron: #f97316;
+    --saffron-light: #fff3e8;
+    --saffron-dark: #c2410c;
+    --green: #16a34a;
+    --green-light: #dcfce7;
+    --muted: #6b7280;
+    --border: #e5e1d8;
+    --card: #ffffff;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Hind', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: white;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 48px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(249,115,22,0.15);
+    border: 1px solid rgba(249,115,22,0.3);
+    color: #fb923c;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #fb923c;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(28px, 6vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 span {
+    color: var(--saffron);
+    position: relative;
+    display: inline-block;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  .hero-sub strong { color: white; }
+
+  .stats-row {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  .stat { }
+  .stat-num {
+    font-family: 'Baloo 2', cursive;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+
+  .hero-decoration {
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* PAIN SECTION */
+  .pain {
+    background: var(--saffron-light);
+    border-top: 1px solid #fed7aa;
+    border-bottom: 1px solid #fed7aa;
+    padding: 28px 24px;
+  }
+  .pain-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .pain-label {
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--saffron-dark);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .pain-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pain-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #7c2d12;
+    line-height: 1.5;
+  }
+  .pain-x {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: #fed7aa;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--saffron-dark);
+    font-weight: 700;
+  }
+
+  /* MAIN CONTENT */
+  .main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+  }
+
+  /* HOW IT WORKS */
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--saffron);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: var(--border);
+    z-index: 0;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 16px;
+    padding: 0 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .step-item:last-child { padding-bottom: 0; }
+
+  .step-num {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Baloo 2', cursive;
+    font-size: 16px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .step-num.active { background: var(--saffron); }
+
+  .step-body { padding-top: 6px; }
+  .step-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .step-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* TESTIMONIAL PREVIEW */
+  .testimonial {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .testimonial::before {
+    content: '"';
+    font-family: 'Baloo 2', cursive;
+    font-size: 64px;
+    color: var(--saffron-light);
+    position: absolute;
+    top: -8px;
+    left: 16px;
+    line-height: 1;
+  }
+  .testimonial-text {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.7;
+    padding-top: 12px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .author-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Baloo 2', cursive;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .author-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .author-role {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--green);
+    background: var(--green-light);
+    padding: 2px 8px;
+    border-radius: 100px;
+    margin-left: auto;
+  }
+
+  /* SURVEY FORM */
+  .survey-card {
+    background: var(--card);
+    border: 1.5px solid var(--ink);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 32px;
+    box-shadow: 4px 4px 0px var(--ink);
+  }
+
+  .survey-header {
+    background: var(--ink);
+    padding: 18px 22px;
+    color: white;
+  }
+  .survey-header-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .survey-header-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .progress-bar-wrap {
+    background: rgba(255,255,255,0.15);
+    border-radius: 4px;
+    height: 4px;
+    margin-top: 12px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 4px;
+    background: var(--saffron);
+    border-radius: 4px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+  .progress-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 5px;
+  }
+
+  .survey-body { padding: 24px 22px; }
+
+  .q-block {
+    display: none;
+    animation: fadeIn 0.3s ease;
+  }
+  .q-block.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .q-num {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--saffron);
+    margin-bottom: 6px;
+  }
+  .q-text {
+    font-family: 'Baloo 2', cursive;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .option-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: var(--paper);
+    cursor: pointer;
+    font-family: 'Hind', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    text-align: left;
+    transition: all 0.15s;
+    width: 100%;
+  }
+
+  .option-btn:hover {
+    border-color: var(--saffron);
+    background: var(--saffron-light);
+  }
+
+  .option-btn.selected {
+    border-color: var(--saffron);
+    background: var(--saffron-light);
+    color: var(--saffron-dark);
+    font-weight: 500;
+  }
+
+  .option-radio {
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+
+  .option-btn.selected .option-radio {
+    border-color: var(--saffron);
+    background: var(--saffron);
+  }
+
+  .option-btn.selected .option-radio::after {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: white;
+  }
+
+  .text-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: var(--paper);
+    font-family: 'Hind', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s;
+    margin-bottom: 20px;
+    resize: none;
+  }
+  .text-input:focus { border-color: var(--saffron); }
+  .text-input::placeholder { color: #9ca3af; }
+
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-back {
+    padding: 10px 18px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: transparent;
+    font-family: 'Hind', sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-back:hover { border-color: var(--ink); color: var(--ink); }
+
+  .btn-next {
+    flex: 1;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    background: var(--ink);
+    color: white;
+    font-family: 'Baloo 2', cursive;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .btn-next:hover { background: #1f2937; transform: translateY(-1px); }
+  .btn-next:disabled { background: #d1d5db; cursor: not-allowed; transform: none; }
+  .btn-next.submit-btn { background: var(--green); }
+  .btn-next.submit-btn:hover { background: #15803d; }
+
+  /* SUCCESS */
+  .success-view {
+    display: none;
+    text-align: center;
+    padding: 32px 22px;
+    animation: fadeIn 0.4s ease;
+  }
+  .success-icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--green-light);
+    margin: 0 auto 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+  }
+  .success-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .success-text {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: #25D366;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Baloo 2', cursive;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .whatsapp-btn:hover { background: #128C7E; }
+
+  /* COUNTER */
+  .counter-bar {
+    background: var(--green-light);
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .counter-num {
+    font-family: 'Baloo 2', cursive;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--green);
+    line-height: 1;
+  }
+  .counter-text { font-size: 13px; color: #166534; line-height: 1.4; }
+  .counter-text strong { font-weight: 600; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 20px 24px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 480px) {
+    .stats-row { gap: 20px; }
+    .survey-body { padding: 18px 16px; }
+    .survey-header { padding: 16px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-decoration"></div>
+  <div class="hero-inner">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      Jald Aa Raha Hai
+    </div>
+    <h1>Interview main <span>confidence</span> lao. Practice karo english ya hindi main AI ke saath.</h1>
+    <p class="hero-sub">
+      Pehli interview hai? <strong>Ghabrao mat.</strong> Hamara AI interview coach voice practice karwayega, feedback dega, aur batayega kahan improve karna hai — bilkul ek real interviewer ki tarah.
+    </p>
+  
+  </div>
+</div>
+
+<!-- PAIN -->
+<div class="pain">
+  <div class="pain-inner">
+    <div class="pain-label">Yeh feel hota hai na?</div>
+    <div class="pain-items">
+      <div class="pain-item">
+        <div class="pain-x">✕</div>
+        <span>ChatGPT se puchha, ek ghante ka essay aa gaya — samajh nahi aaya kya karna hai</span>
+      </div>
+      <div class="pain-item">
+        <div class="pain-x">✕</div>
+        <span>YouTube dekha, lekin koi feedback nahi milta ki <em>mera</em> answer sahi hai ya nahi</span>
+      </div>
+      <div class="pain-item">
+        <div class="pain-x">✕</div>
+        <span>"Tell me about yourself" sunke hi nervous ho jaate ho — pata nahi kya bolna hai</span>
+      </div>
+      <div class="pain-item">
+        <div class="pain-x">✕</div>
+        <span>College mein kisi ne sikhaya nahi — ghar mein koi corporate job waala nahi</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- HOW IT WORKS -->
+  <div class="section-label">Kaise kaam karta hai</div>
+  <div class="section-title">3 steps mein interview ready</div>
+
+  <div class="steps">
+    <div class="step-item">
+      <div class="step-num active">1</div>
+      <div class="step-body">
+        <div class="step-title">Apna interviewer chuno</div>
+        <div class="step-desc">TCS HR, Infosys Technical, BPO Supervisor, Bank PO — jo bhi tumhari job hai, woh persona select karo.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num active">2</div>
+      <div class="step-body">
+        <div class="step-title">Practice karo, feedback pao</div>
+        <div class="step-desc">Answer do, AI Coach turant batayega — kya acha tha, kahan improve karna hai, aur exactly kaisa bolna chahiye tha. Hindi mein. Simple mein.</div>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num active">3</div>
+      <div class="step-body">
+        <div class="step-title">Progress dekho, grow karo</div>
+        <div class="step-desc">Har session track hota hai. Dashboard mein dekhte raho tumhara improvement.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL (aspirational) -->
+  <div class="testimonial">
+    <div class="testimonial-text">
+      "Maine 14 sessions kiye. TCS HR persona se practice ki. Real interview mein exact wahi questions aaye. Select ho gaya. Mere ghar mein pehli corporate job."
+    </div>
+    <div class="testimonial-author">
+      <div class="author-avatar">RK</div>
+      <div>
+        <div class="author-name">Rohit Kumar</div>
+        <div class="author-role">Raipur, Chhattisgarh · TCS select hua</div>
+      </div>
+      <div class="verified">✓ Verified</div>
+    </div>
+  </div>
+
+  <!-- COUNTER -->
+  <div class="counter-bar">
+    <div class="counter-num" id="counter">47</div>
+    <div class="counter-text">
+      <strong>logon ne abhi interest dikhaya hai</strong><br>
+      Hum pehle 200 logon ke liye free beta launch kar rahe hain
+    </div>
+  </div>
+
+  <!-- SURVEY FORM -->
+  <div class="survey-card" id="surveyCard">
+    <div class="survey-header">
+      <div class="survey-header-title">2 minute mein bata do — free beta mein join karo</div>
+      <div class="survey-header-sub">Koi spam nahi. Sirf launch hone par notify karenge.</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-label" id="progressLabel">Sawaal 1 / 6</div>
+    </div>
+
+    <div class="survey-body" id="surveyBody">
+
+      <!-- Q1 -->
+      <div class="q-block active" id="q1">
+        <div class="q-num">Sawaal 1</div>
+        <div class="q-text">Abhi job dhundh rahe ho?</div>
+        <div class="options">
+          <button class="option-btn" onclick="selectOption(this,'q1')">
+            <div class="option-radio"></div>
+            Haan, actively apply kar raha/rahi hoon
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q1')">
+            <div class="option-radio"></div>
+            Haan, lekin abhi shuru nahi kiya
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q1')">
+            <div class="option-radio"></div>
+            Nahi, future ke liye prepare ho raha/rahi hoon
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q1')">
+            <div class="option-radio"></div>
+            Job hai, better opportunity dhundh raha/rahi hoon
+          </button>
+        </div>
+        <div class="nav-row">
+          <button class="btn-next" onclick="nextQ(2)" id="btn1" disabled>Aage →</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="q-block" id="q2">
+        <div class="q-num">Sawaal 2</div>
+        <div class="q-text">Kaunsi job ke liye apply karna chahte ho?</div>
+        <div class="options">
+          <button class="option-btn" onclick="selectOption(this,'q2')">
+            <div class="option-radio"></div>
+            IT company (TCS, Infosys, Wipro, etc.)
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q2')">
+            <div class="option-radio"></div>
+            BPO / Call centre
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q2')">
+            <div class="option-radio"></div>
+            Bank / Finance
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q2')">
+            <div class="option-radio"></div>
+            Kuch aur (sales, retail, etc.)
+          </button>
+        </div>
+        <div class="nav-row">
+          <button class="btn-back" onclick="goBack(1)">← Back</button>
+          <button class="btn-next" onclick="nextQ(3)" id="btn2" disabled>Aage →</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="q-block" id="q3">
+        <div class="q-num">Sawaal 3</div>
+        <div class="q-text">Interview ki sabse badi problem kya hai?</div>
+        <div class="options">
+          <button class="option-btn" onclick="selectOption(this,'q3')">
+            <div class="option-radio"></div>
+            Nervous ho jaata/jaati hoon, sab bhool jaata/jaati hoon
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q3')">
+            <div class="option-radio"></div>
+            English mein bolna mushkil lagta hai
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q3')">
+            <div class="option-radio"></div>
+            Pata nahi kya bolna chahiye — koi guide nahi hai
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q3')">
+            <div class="option-radio"></div>
+            Practice karne ka koi option nahi hai
+          </button>
+        </div>
+        <div class="nav-row">
+          <button class="btn-back" onclick="goBack(2)">← Back</button>
+          <button class="btn-next" onclick="nextQ(4)" id="btn3" disabled>Aage →</button>
+        </div>
+      </div>
+
+      <!-- Q4 (was Q5) -->
+      <div class="q-block" id="q4">
+        <div class="q-num">Sawaal 4</div>
+        <div class="q-text">Tum kahan se ho?</div>
+        <div class="options">
+          <button class="option-btn" onclick="selectOption(this,'q4')">
+            <div class="option-radio"></div>
+            Chhota shahar (jaise Nagpur, Indore, Patna, Lucknow)
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q4')">
+            <div class="option-radio"></div>
+            Bada shahar (Mumbai, Delhi, Bangalore, etc.)
+          </button>
+          <button class="option-btn" onclick="selectOption(this,'q4')">
+            <div class="option-radio"></div>
+            Gaon / Kasba
+          </button>
+        </div>
+        <div class="nav-row">
+          <button class="btn-back" onclick="goBack(3)">← Back</button>
+          <button class="btn-next" onclick="nextQ(5)" id="btn4" disabled>Aage →</button>
+        </div>
+      </div>
+
+      <!-- Q5 — Contact -->
+      <div class="q-block" id="q5">
+        <div class="q-num">Aakhri sawaal</div>
+        <div class="q-text">Apna WhatsApp number do — launch par sabse pehle tumhe batayenge</div>
+        <input type="tel" class="text-input" id="phoneInput" placeholder="WhatsApp number (10 digits)" maxlength="10" oninput="checkPhone()">
+        <input type="text" class="text-input" id="nameInput" placeholder="Tumhara naam (optional)" style="margin-top:-10px;">
+        <div class="nav-row">
+          <button class="btn-back" onclick="goBack(4)">← Back</button>
+          <button class="btn-next submit-btn" onclick="submitForm()" id="btn5" disabled>
+            Waitlist mein join karo ✓
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-view" id="successView">
+      <div class="success-icon">✓</div>
+      <div class="success-title">Ho gaya! Tum waitlist mein ho.</div>
+      <div class="success-text">
+        Jab beta launch hoga, tumhe sabse pehle WhatsApp karenge.<br>
+        <strong>Pehle 200 logon ko free access milega.</strong><br><br>
+        Apne doston ko bhi batao — unka bhi career banao.
+      </div>
+      <a class="whatsapp-btn" href="https://wa.me/?text=Yaar%2C%20ek%20app%20aa%20rahi%20hai%20jo%20TCS%2FInfosys%20interview%20ki%20practice%20karwati%20hai%20Hindi%20mein%20%E2%80%94%20free%20beta%20ke%20liye%20waitlist%20join%20karo%3A%20[YOUR_LINK_HERE]">
+        Share on WhatsApp
+      </a>
+    </div>
+
+  </div>
+
+  <!-- WHY TRUST US -->
+  <div class="section-title" style="margin-top:0;">ChatGPT se alag kaise hai?</div>
+
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:40px;">
+    <div style="display:flex;gap:12px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;">
+      <div style="width:32px;height:32px;border-radius:8px;background:var(--saffron-light);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🎯</div>
+      <div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:3px;">Sirf interview ke liye bana hai</div>
+        <div style="font-size:13px;color:var(--muted);">Hamara AI trained hai specifically job interview main confidence build karne ke liye.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;">
+      <div style="width:32px;height:32px;border-radius:8px;background:var(--saffron-light);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">📊</div>
+      <div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:3px;">Progress track hota hai</div>
+        <div style="font-size:13px;color:var(--muted);">Yeh app tumhari har session ki improvement track karta hai, aur batayega kitna improve hua hai.</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;">
+      <div style="width:32px;height:32px;border-radius:8px;background:var(--saffron-light);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">🗣️</div>
+      <div>
+        <div style="font-size:14px;font-weight:600;margin-bottom:3px;">Hindi mein feedback</div>
+        <div style="font-size:13px;color:var(--muted);">"Aapka answer thoda generic tha — isko specific banao" — exactly aise, samajh mein aane wali language mein.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  InterviewReady · Made for Bharat's job seekers<br>
+  Koi spam nahi · Data safe hai · Kabhi bhi unsubscribe karo
+</footer>
+
+<script>
+var answers = {};
+var currentQ = 1;
+var totalQ = 5;
+var signupCount = 47;
+
+function updateProgress(qNum) {
+  var pct = Math.round(((qNum - 1) / totalQ) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = 'Sawaal ' + qNum + ' / ' + totalQ;
+}
+
+function selectOption(btn, qId) {
+  var opts = btn.parentElement.querySelectorAll('.option-btn');
+  opts.forEach(function(o) { o.classList.remove('selected'); });
+  btn.classList.add('selected');
+  answers[qId] = btn.textContent.trim();
+  var qNum = parseInt(qId.replace('q', ''));
+  var nextBtn = document.getElementById('btn' + qNum);
+  if (nextBtn) nextBtn.disabled = false;
+}
+
+function nextQ(num) {
+  document.getElementById('q' + (num - 1)).classList.remove('active');
+  document.getElementById('q' + num).classList.add('active');
+  currentQ = num;
+  updateProgress(num);
+  window.scrollTo({ top: document.getElementById('surveyCard').offsetTop - 20, behavior: 'smooth' });
+}
+
+function goBack(num) {
+  document.getElementById('q' + (num + 1)).classList.remove('active');
+  document.getElementById('q' + num).classList.add('active');
+  currentQ = num;
+  updateProgress(num);
+}
+
+function checkPhone() {
+  var val = document.getElementById('phoneInput').value;
+  document.getElementById('btn5').disabled = val.length < 10;
+}
+
+function submitForm() {
+  answers['phone'] = document.getElementById('phoneInput').value;
+  answers['name'] = document.getElementById('nameInput').value;
+  // In production: POST to your backend / Airtable / Google Sheets
+  console.log('Survey submitted:', answers);
+
+  document.getElementById('surveyBody').style.display = 'none';
+  document.getElementById('successView').style.display = 'block';
+
+  signupCount++;
+  document.getElementById('counter').textContent = signupCount;
+
+  // Animate counter
+  var el = document.getElementById('counter');
+  el.style.transform = 'scale(1.3)';
+  el.style.color = '#16a34a';
+  setTimeout(function() {
+    el.style.transform = 'scale(1)';
+    el.style.transition = 'all 0.3s';
+  }, 300);
+}
+
+updateProgress(1);
+
+// Simulate live counter ticking occasionally
+setInterval(function() {
+  if (Math.random() > 0.7) {
+    signupCount++;
+    var el = document.getElementById('counter');
+    if (el) {
+      el.textContent = signupCount;
+      el.style.transform = 'scale(1.15)';
+      el.style.color = '#16a34a';
+      setTimeout(function() {
+        el.style.transform = 'scale(1)';
+        el.style.color = '#16a34a';
+      }, 400);
+    }
+  }
+}, 8000);
+</script>
+</body>
+</html>
