@@ -624,7 +624,7 @@
       <div class="badge-dot" style="background:#4ade80;"></div>
       5217+ Users Enrolled
     </div>
-<h1 style="line-height:1.15;letter-spacing:-0.02em;">
+    <h1 style="line-height:1.15;letter-spacing:-0.02em;">
       <span style="font-size:clamp(15px,3vw,20px);font-weight:500;color:rgba(255,255,255,0.55);display:block;margin-bottom:10px;letter-spacing:0.01em;">पहली नौकरी पक्की करो</span>
       <span style="font-size:clamp(42px,9vw,72px);font-weight:800;display:block;background:linear-gradient(90deg,#f97316 0%,#fb923c 45%,#fbbf24 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;">AI Interview Coach</span>
       <span style="font-size:clamp(16px,3.5vw,22px);font-weight:500;color:rgba(255,255,255,0.6);display:block;letter-spacing:0.01em;">बिना किसी जजमेंट के प्रैक्टिस करो और आत्मविश्वास बढ़ाओ। <span style="color:rgba(255,255,255,0.9);font-weight:600;">आपके फ़ोन पर</span></span>
@@ -632,7 +632,6 @@
     <p class="hero-sub">
       पहला इंटरव्यू? <strong>डरो मत,</strong> यह AI इंटरव्यू कोच इंटरव्यू के सवालों के आधार पर आपके साथ इंटरव्यू की प्रैक्टिस करेगा, आपको फ़ीडबैक देगा, और आपको ठीक-ठीक बताएगा कि आपको कहाँ सुधार करने की ज़रूरत है। बिल्कुल एक असली इंटरव्यू लेने वाले की तरह।
     </p>
-  
   </div>
 </div>
 
@@ -692,7 +691,7 @@
     </div>
   </div>
 
-  <!-- TESTIMONIAL (aspirational) -->
+  <!-- TESTIMONIAL -->
   <div class="testimonial">
     <div class="testimonial-text">
       "Maine 14 sessions kiye. TCS HR persona se practice ki. Real interview mein exact wahi questions aaye. Select ho gaya. Mere ghar mein pehli corporate job."
@@ -724,7 +723,7 @@
       <div class="progress-bar-wrap">
         <div class="progress-bar-fill" id="progressFill"></div>
       </div>
-      <div class="progress-label" id="progressLabel">Sawaal 1 / 6</div>
+      <div class="progress-label" id="progressLabel">Sawaal 1 / 5</div>
     </div>
 
     <div class="survey-body" id="surveyBody">
@@ -812,7 +811,7 @@
         </div>
       </div>
 
-      <!-- Q4 (was Q5) -->
+      <!-- Q4 -->
       <div class="q-block" id="q4">
         <div class="q-num">Sawaal 4</div>
         <div class="q-text">Tum kahan se ho?</div>
@@ -861,7 +860,7 @@
         <strong>Thank You!</strong><br><br>
         Apne doston ko bhi batao — unka bhi career banao.
       </div>
-      <a class="whatsapp-btn" href="https://wa.me/?text=Yaar%2C%20ek%20app%20aa%20rahi%20hai%20jo%20TCS%2FInfosys%20interview%20ki%20practice%20karwati%20hai%20Hindi%20mein%20%E2%80%94%20free%20beta%20ke%20liye%20waitlist%20join%20karo%3A%20[https://interviewer-lp.vercel.app/?utm_source refferal]">
+      <a class="whatsapp-btn" href="https://wa.me/?text=Yaar%2C%20ek%20app%20aa%20rahi%20hai%20jo%20TCS%2FInfosys%20interview%20ki%20practice%20karwati%20hai%20Hindi%20mein%20%E2%80%94%20free%20beta%20ke%20liye%20waitlist%20join%20karo%3A%20[https://interviewer-lp.vercel.app/?utm_source=referral]">
         Share on WhatsApp
       </a>
     </div>
@@ -869,7 +868,7 @@
   </div>
 
   <!-- WHY TRUST US -->
-  <div class="section-title" style="margin-top:0;">Aur kahan milega yeh sab? </div>
+  <div class="section-title" style="margin-top:0;">Aur kahan milega yeh sab?</div>
 
   <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:40px;">
     <div style="display:flex;gap:12px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;">
@@ -904,104 +903,104 @@
 </footer>
 
 <script>
-var answers = {};
-var currentQ = 1;
-var totalQ = 5;
-var signupCount = 47;
+  var answers = {};
+  var currentQ = 1;
+  var totalQ = 5;
+  var signupCount = 47;
 
-function updateProgress(qNum) {
-  var pct = Math.round(((qNum - 1) / totalQ) * 100);
-  document.getElementById('progressFill').style.width = pct + '%';
-  document.getElementById('progressLabel').textContent = 'Sawaal ' + qNum + ' / ' + totalQ;
-}
+  function updateProgress(qNum) {
+    var pct = Math.round(((qNum - 1) / totalQ) * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressLabel').textContent = 'Sawaal ' + qNum + ' / ' + totalQ;
+  }
 
-function selectOption(btn, qId) {
-  var opts = btn.parentElement.querySelectorAll('.option-btn');
-  opts.forEach(function(o) { o.classList.remove('selected'); });
-  btn.classList.add('selected');
-  answers[qId] = btn.textContent.trim();
-  var qNum = parseInt(qId.replace('q', ''));
-  var nextBtn = document.getElementById('btn' + qNum);
-  if (nextBtn) nextBtn.disabled = false;
-}
+  function selectOption(btn, qId) {
+    var opts = btn.parentElement.querySelectorAll('.option-btn');
+    opts.forEach(function(o) { o.classList.remove('selected'); });
+    btn.classList.add('selected');
+    answers[qId] = btn.textContent.trim();
+    var qNum = parseInt(qId.replace('q', ''));
+    var nextBtn = document.getElementById('btn' + qNum);
+    if (nextBtn) nextBtn.disabled = false;
+  }
 
-function nextQ(num) {
-  document.getElementById('q' + (num - 1)).classList.remove('active');
-  document.getElementById('q' + num).classList.add('active');
-  currentQ = num;
-  updateProgress(num);
-  window.scrollTo({ top: document.getElementById('surveyCard').offsetTop - 20, behavior: 'smooth' });
-}
+  function nextQ(num) {
+    document.getElementById('q' + (num - 1)).classList.remove('active');
+    document.getElementById('q' + num).classList.add('active');
+    currentQ = num;
+    updateProgress(num);
+    window.scrollTo({ top: document.getElementById('surveyCard').offsetTop - 20, behavior: 'smooth' });
+  }
 
-function goBack(num) {
-  document.getElementById('q' + (num + 1)).classList.remove('active');
-  document.getElementById('q' + num).classList.add('active');
-  currentQ = num;
-  updateProgress(num);
-}
+  function goBack(num) {
+    document.getElementById('q' + (num + 1)).classList.remove('active');
+    document.getElementById('q' + num).classList.add('active');
+    currentQ = num;
+    updateProgress(num);
+  }
 
-function checkPhone() {
-  var val = document.getElementById('phoneInput').value;
-  document.getElementById('btn5').disabled = val.length < 10;
-}
+  function checkPhone() {
+    var val = document.getElementById('phoneInput').value;
+    document.getElementById('btn5').disabled = val.length < 10;
+  }
 
-function submitForm() {
+  // ✅ FIXED: Single flat submitForm — no nested function
   function submitForm() {
-  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz1NrdBpUbLaVbe0cID-dnwrErQypNeL1zH0wLbvocNBaBSsYiqs6r7MIUAHXo5aS-aEA/exec'; // ← paste URL from Step 3
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz1NrdBpUbLaVbe0cID-dnwrErQypNeL1zH0wLbvocNBaBSsYiqs6r7MIUAHXo5aS-aEA/exec';
 
-  var data = {
-    name:  document.getElementById('nameInput').value,
-    phone: document.getElementById('phoneInput').value,
-    q1: answers['q1'] || '',
-    q2: answers['q2'] || '',
-    q3: answers['q3'] || '',
-    q4: answers['q4'] || ''
-  };
+    var data = {
+      name:  document.getElementById('nameInput').value,
+      phone: document.getElementById('phoneInput').value,
+      q1: answers['q1'] || '',
+      q2: answers['q2'] || '',
+      q3: answers['q3'] || '',
+      q4: answers['q4'] || ''
+    };
 
-  // Show success screen immediately (don't make user wait)
-  document.getElementById('surveyBody').style.display = 'none';
-  document.getElementById('successView').style.display = 'block';
-  signupCount++;
-  document.getElementById('counter').textContent = signupCount;
+    // Show success immediately — don't make user wait
+    document.getElementById('surveyBody').style.display = 'none';
+    document.getElementById('successView').style.display = 'block';
 
-  // Send data to Google Sheets in background
-  fetch(SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  }).catch(function(err) {
-    console.error('Sheets error:', err);
-  });
-}
-  // Animate counter
-  var el = document.getElementById('counter');
-  el.style.transform = 'scale(1.3)';
-  el.style.color = '#16a34a';
-  setTimeout(function() {
-    el.style.transform = 'scale(1)';
-    el.style.transition = 'all 0.3s';
-  }, 300);
-}
-
-updateProgress(1);
-
-// Simulate live counter ticking occasionally
-setInterval(function() {
-  if (Math.random() > 0.7) {
+    // Animate counter
     signupCount++;
     var el = document.getElementById('counter');
-    if (el) {
-      el.textContent = signupCount;
-      el.style.transform = 'scale(1.15)';
-      el.style.color = '#16a34a';
-      setTimeout(function() {
-        el.style.transform = 'scale(1)';
-        el.style.color = '#16a34a';
-      }, 400);
-    }
+    el.textContent = signupCount;
+    el.style.transform = 'scale(1.3)';
+    el.style.color = '#16a34a';
+    setTimeout(function() {
+      el.style.transform = 'scale(1)';
+      el.style.transition = 'all 0.3s';
+    }, 300);
+
+    // Send to Google Sheets in background
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).catch(function(err) {
+      console.error('Sheets error:', err);
+    });
   }
-}, 8000);
+
+  updateProgress(1);
+
+  // Simulate live counter ticking
+  setInterval(function() {
+    if (Math.random() > 0.7) {
+      signupCount++;
+      var el = document.getElementById('counter');
+      if (el) {
+        el.textContent = signupCount;
+        el.style.transform = 'scale(1.15)';
+        el.style.color = '#16a34a';
+        setTimeout(function() {
+          el.style.transform = 'scale(1)';
+          el.style.color = '#16a34a';
+        }, 400);
+      }
+    }
+  }, 8000);
 </script>
 </body>
 </html>
