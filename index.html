@@ -946,17 +946,34 @@ function checkPhone() {
 }
 
 function submitForm() {
-  answers['phone'] = document.getElementById('phoneInput').value;
-  answers['name'] = document.getElementById('nameInput').value;
-  // In production: POST to your backend / Airtable / Google Sheets
-  console.log('Survey submitted:', answers);
+  function submitForm() {
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz1NrdBpUbLaVbe0cID-dnwrErQypNeL1zH0wLbvocNBaBSsYiqs6r7MIUAHXo5aS-aEA/exec'; // ← paste URL from Step 3
 
+  var data = {
+    name:  document.getElementById('nameInput').value,
+    phone: document.getElementById('phoneInput').value,
+    q1: answers['q1'] || '',
+    q2: answers['q2'] || '',
+    q3: answers['q3'] || '',
+    q4: answers['q4'] || ''
+  };
+
+  // Show success screen immediately (don't make user wait)
   document.getElementById('surveyBody').style.display = 'none';
   document.getElementById('successView').style.display = 'block';
-
   signupCount++;
   document.getElementById('counter').textContent = signupCount;
 
+  // Send data to Google Sheets in background
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).catch(function(err) {
+    console.error('Sheets error:', err);
+  });
+}
   // Animate counter
   var el = document.getElementById('counter');
   el.style.transform = 'scale(1.3)';
